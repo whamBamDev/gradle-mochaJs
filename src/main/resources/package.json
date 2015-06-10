@@ -1,0 +1,8 @@
+{
+  "name": "intTests",
+  "description": "A package using versioning best-practices",
+  "author": "user",
+  "dependencies": {
+    "mocha": "*"
+  }
+}
