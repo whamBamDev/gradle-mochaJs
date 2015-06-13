@@ -91,4 +91,7 @@ testCase =  function (title, fn){
 
 
 
+> XUNIT_FILE=xunit.xml ./../DemoApp/node_modules/.bin/mocha  ../DemoApp/src/intTest/javascript/myTest.js --reporter xunit-file 
 
+
+> LOG_XUNIT=true ./../DemoApp/node_modules/.bin/mocha  ../DemoApp/src/intTest/javascript/myTest.js --reporter xunit-file
