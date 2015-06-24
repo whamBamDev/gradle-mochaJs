@@ -3,6 +3,8 @@ package me.ineson.gradle
 import org.gradle.api.Project
 import org.gradle.api.Plugin
 
+import me.ineson.gradle.mocha.task.MochaTask
+
 /*
  *  TODO:
  *  1) Run before - install nodeJS 
@@ -22,5 +24,8 @@ class MochaJsPlugin implements Plugin<Project> {
 //        target.extensions.create('mode', MochaJsPluginExtension)
     
         target.task('hello', type: MochaJsTask)
+
+        target.task('MochaTask', type: MochaTask)
+
     }
 }

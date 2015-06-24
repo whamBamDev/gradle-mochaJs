@@ -68,7 +68,7 @@ peter@linux-09qt:~/Dev/demo/Demo/Demo>
 > ls /home/peter/.gradle/nodejs/node-v0.11.10-linux-x86/lib/node_modules/mocha-test-runner/node_modules/mocha/
 
 > export PATH=$PATH:/home/peter/Dev/demo/Demo/DemoApp/build/DemoApp_nodejsWork/node-v0.11.10-linux-x86/bin
-
+> export NODE_PATH=~/Dev/demo/Demo/DemoApp/build/nodeJsTest/node_modules
 peter@linux-09qt:~/Dev/demo/Demo/Demo> ./../DemoApp/node_modules/.bin/mocha  ../DemoApp/src/intTest/javascript/myTest.js
 myTest ----------------- Hello World ----------------------
 testCase =  function (title, fn){
