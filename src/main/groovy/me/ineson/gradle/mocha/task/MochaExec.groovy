@@ -42,7 +42,7 @@ class MochaExec
         this.modulesDir = modulesDir;
         this.runner = new MochaExecRunner( this.project );
 
-        sourceDir = new File( project.projectDir, "src/" + step + "/javascript");
+        sourceDir = new File( project.projectDir, "src" + File.separator + step + File.separator + "javascript");
 
         resultDir = new File( project.buildDir, step + "-results");
         
@@ -59,7 +59,7 @@ class MochaExec
     void setArgs( final Iterable<?> value )
     {
         this.args = value
-    }
+	}
 
     void setEnvironment( final Map<String, ?> value )
     {
@@ -95,10 +95,11 @@ class MochaExec
     
     void runTest( String testPackage, String testScriptFile)
     {
-        File sourceFile = new File( sourceDir, testPackage + "/" + testScriptFile + ".js");
+        File sourceFile = new File( sourceDir, testPackage + File.separator + testScriptFile + ".js");
         File resultFile = new File( resultDir, "TEST-" + testPackage + "." + testScriptFile + ".xml");
 
-        def execArgs = [ sourceFile, '--reporter', 'xunit-file'];
+        def execArgs = [ sourceFile.absolutePath, '--reporter', 'xunit-file'];
+//        def execArgs = [ 'node_modules/mocha/bin/mocha', sourceFile, '--reporter', 'xunit-file'];
         def nodeEnvironment = [:];
 
         if( !sourceFile.exists() ) {
@@ -106,12 +107,17 @@ class MochaExec
         }
 
         nodeEnvironment['SUITE_NAME'] = testPackage + "." + testScriptFile;
-        nodeEnvironment['NODE_PATH'] = modulesDir.absolutePath + "/node_modules";
+        nodeEnvironment['NODE_PATH'] = modulesDir.absolutePath + File.separator + "node_modules";
         nodeEnvironment['XUNIT_FILE'] = resultFile.absolutePath;
 
-        //execArgs.add( this.script.absolutePath )
+		println( "SUITE_NAME=" + nodeEnvironment['SUITE_NAME']);
+		println( "NODE_PATH=" + nodeEnvironment['NODE_PATH']);
+		println( "XUNIT_FILE=" + nodeEnvironment['XUNIT_FILE']);
+
+		        //execArgs.add( this.script.absolutePath )
         execArgs.addAll( this.args as List )
 
+        this.runner.workingDirFile = modulesDir;
         this.runner.workingDir = modulesDir;
         this.runner.arguments = execArgs;
         this.runner.environment = nodeEnvironment;
