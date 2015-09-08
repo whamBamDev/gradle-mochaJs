@@ -1,9 +1,12 @@
 # gradle-mochaJs
 
-<div style="width:100%; color: red;" >
-This plugin is just experimental. It is currently being used for working out the
-mechanisms for running mocha tests. 
-</div>
+> WARNING: This plugin is just experimental. It is currently being used for working out the mechanisms for running mocha tests.
+
+<pre style="color: red">Text is '''preformatted''' 
+with a style and 
+''markups'' '''''cannot''''' be done
+</pre>
+
 
 A plugin for gradle for executing JavaScript test cases using the [mochaJs](http://mochajs.org/) framework.
 
