@@ -1,9 +1,9 @@
 # gradle-mochaJs
 
-<aside class="warning">
+<div style="width:100%; colour: red;" >
 This plugin is just experimental. It is currently being used for working out the
 mechanisms for running mocha tests. 
-</aside>
+</div>
 
 A plugin for gradle for executing JavaScript test cases using the [mochaJs](http://mochajs.org/) framework.
 
