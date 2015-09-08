@@ -1,5 +1,10 @@
 # gradle-mochaJs
 
+<aside class="warning">
+This plugin is just experimental. It is currently being used for working out the
+mechanisms for running mocha tests. 
+</aside>
+
 A plugin for gradle for executing JavaScript test cases using the [mochaJs](http://mochajs.org/) framework.
 
 ##How to build 
