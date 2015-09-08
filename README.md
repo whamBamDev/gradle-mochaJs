@@ -1,6 +1,6 @@
 # gradle-mochaJs
 
-<div style="width:100%; colour: red;" >
+<div style="width:100%; color: red;" >
 This plugin is just experimental. It is currently being used for working out the
 mechanisms for running mocha tests. 
 </div>
