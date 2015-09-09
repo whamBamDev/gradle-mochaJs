@@ -38,9 +38,10 @@ class MochaExecRunner extends ExecRunner
            nodeEnvironment << System.getenv()
             // Take care of Windows environments that may contain "Path" OR "PATH" - both existing
             // possibly (but not in parallel as of now)
-		   def unixPath = System.getenv('Path');
-		   def windowsPath = System.getenv('PATH');
+		   def unixPath = System.getenv('PATH');
+		   def windowsPath = System.getenv('Path');
 		   
+           System.out.println( "\n====== Working version! -------\n");
            System.out.println( "\nCurrent Unix PATH : " + unixPath );
            System.out.println( "\nCurrent Windows Path : " + windowsPath);
 		   if (windowsPath != null) {
@@ -48,7 +49,7 @@ class MochaExecRunner extends ExecRunner
                 nodeEnvironment['Path'] = nodeBinDirPath + File.pathSeparator + windowsPath;
            System.out.println( "\nNew Windows Path : " + environment['Path'] )
             }
-   		   if (unixPath != null) {
+		    if (unixPath != null) {
                 environment['PATH'] = nodeBinDirPath + File.pathSeparator + unixPath;
                 nodeEnvironment['PATH'] = nodeBinDirPath + File.pathSeparator + unixPath;
            System.out.println( "\nNew NIX PATH : " + environment['PATH'] )

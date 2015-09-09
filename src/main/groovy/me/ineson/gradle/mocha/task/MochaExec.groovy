@@ -98,7 +98,7 @@ class MochaExec
         File sourceFile = new File( sourceDir, testPackage + File.separator + testScriptFile + ".js");
         File resultFile = new File( resultDir, "TEST-" + testPackage + "." + testScriptFile + ".xml");
 
-        def execArgs = [ sourceFile.absolutePath, '--reporter', 'xunit-file'];
+        def execArgs = [ sourceFile.absolutePath, '--no-exit',  '--reporter', 'xunit-file'];
 //        def execArgs = [ 'node_modules/mocha/bin/mocha', sourceFile, '--reporter', 'xunit-file'];
         def nodeEnvironment = [:];
 
@@ -121,7 +121,7 @@ class MochaExec
         this.runner.workingDir = modulesDir;
         this.runner.arguments = execArgs;
         this.runner.environment = nodeEnvironment;
-        this.runner.ignoreExitValue = true;
+        //this.runner.ignoreExitValue = true;
 
         this.result = this.runner.execute()
     }

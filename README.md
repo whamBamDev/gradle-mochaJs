@@ -1,6 +1,6 @@
 # gradle-mochaJs
 
-> WARNING: This plugin is just experimental. It is currently being used for working out the mechanisms for running mocha tests.
+> WARNING: This plugin is just experimental. It is currently being used for working out the mechanisms for running mocha tests. A complete redesign and rewrite will be occuring soon, use at your peril!
 
 
 A plugin for gradle for executing JavaScript test cases using the [mochaJs](http://mochajs.org/) framework.
